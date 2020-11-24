@@ -14,8 +14,8 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 400px;
-  height: 500px;
+  width: 380px;
+  height: 480px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -63,7 +63,7 @@ const CloseModalButton = styled(MdClose)`
   z-index: 10;
 `;
 
-export const Modal2 = ({ showModal, setShowModal }) => {
+export const Modal2 = ({ showModal, setShowModal, test }) => {
   const modalRef = useRef();
 
   const animation = useSpring({
@@ -97,7 +97,6 @@ export const Modal2 = ({ showModal, setShowModal }) => {
     },
     [keyPress]
   );
-
   return (
     <>
       {showModal ? (
@@ -105,34 +104,36 @@ export const Modal2 = ({ showModal, setShowModal }) => {
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
               <ModalContent>
-              <form>
-                <h3>Sign Up</h3>
+                <form>
+                  <h3>Sign Up</h3>
 
-                <div className="form-group">
+                  <div className="form-group">
                     <label>First name</label>
                     <input type="text" className="form-control" placeholder="First name" />
-                </div>
+                  </div>
 
-                <div className="form-group">
+                  <div className="form-group">
                     <label>Last name</label>
                     <input type="text" className="form-control" placeholder="Last name" />
-                </div>
+                  </div>
 
-                <div className="form-group">
+                  <div className="form-group">
                     <label>Email address</label>
                     <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+                  </div>
 
-                <div className="form-group">
+                  <div className="form-group">
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
+                  </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right">
+                  <button type="button" onClick={() => {
+                    test()
+                  }} className="btn btn-primary btn-block">Sign Up</button>
+                  <p className="forgot-password text-right">
                     Already registered <a href=" ">sign in?</a>
-                </p>
-            </form>
+                  </p>
+                </form>
               </ModalContent>
               <CloseModalButton
                 aria-label='Close modal'

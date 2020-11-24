@@ -51,7 +51,7 @@ exports.addFeedBack = (req, res) => {
 }
 
 exports.getbycat = (req, res) => {
-    ResturantModel.find({ categoty: { $all: ["Sea Food"] } }, (err, data) => {
+    ResturantModel.find({ categoty: { $all: [req.body.cat] } }, (err, data) => {
         if (err)
             return res.status(400).send('error')
 

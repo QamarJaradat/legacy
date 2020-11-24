@@ -3,6 +3,9 @@ import Navbar from './components/Homepage/Navbar';
 import Footer from './components/Homepage/Footer';
 import Home from './components/Homepage/Home'
 import $ from 'jquery'
+import Categories from './components/Homepage/Categories'
+import Restaurants from './components/restaurant/restaurants'
+import OneRest from './components/restaurant/onerestaurant'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
@@ -31,7 +34,11 @@ class App extends React.Component {
     this.paymentCheck = this.paymentCheck.bind(this)
     this.getTrips = this.getTrips.bind(this)
     this.changeUserStatus = this.changeUserStatus.bind(this)
+    this.test = this.test.bind(this)
 
+  }
+  test() {
+    console.log('does it work? really ')
   }
   changeLogInStatus() {
     this.setState({
@@ -120,7 +127,7 @@ class App extends React.Component {
     }
     if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
       console.log('token')
-      nav = <Navbar2></Navbar2>
+      nav = <Navbar2 hello="hello bro" test={this.test}></Navbar2>
     }
     else {
       console.log('noo token')
@@ -144,6 +151,10 @@ class App extends React.Component {
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
+            <Route path="/Category" exact component={Categories} />
+            <Route path="/Category/:category" exact component={Restaurants} />
+            <Route path="/Category/:category/:rest" exact component={OneRest} />
+
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>
           <Footer />

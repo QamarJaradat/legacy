@@ -570,3 +570,33 @@ video {
     }
     
 /* ////////////////////////////////////////////////// */
+
+/* caregory img style */
+.imgstyle {
+  object-fit: cover;
+    object-position: 50% 50%;
+    width: 21vw;
+    height: 14vw;
+    border-radius: 30px ;
+    margin-bottom: 18px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+.fontKaushan{
+  font-family: 'Bangers', cursive;
+  font-size: larger
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Athiti&display=swap');
+.fontcat{
+  font-family: 'Athiti', sans-serif;
+  font-weight: bolder;
+font-size: larger;
+}
+footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
+

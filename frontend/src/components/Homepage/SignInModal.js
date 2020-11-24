@@ -15,8 +15,8 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 450px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -103,22 +103,22 @@ export const Modal = ({ showModal, setShowModal }) => {
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
               <ModalContent>
-              <form className="center-form">
-                <h3>Sign In</h3>
-                <div className="form-group">
+                <form className="center-form">
+                  <h3>Sign In</h3>
+                  <div className="form-group">
                     <label>Email address</label>
                     <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
-                <div className="form-group">
+                  </div>
+                  <div className="form-group">
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
+                  </div>
 
-                <div className="form-group">
-                </div>
+                  <div className="form-group">
+                  </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-            </form>
+                  <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                </form>
               </ModalContent>
               <CloseModalButton
                 aria-label='Close modal'

@@ -9,11 +9,11 @@ function Footer() {
                 <section class='social-media center' >
                     <div class='social-media-wrap'>
                         <div class='footer-logo'>
-                            <Link to='/' className='social-logo'>
+                            <Link to='/' className='social-logo fontKaushan' style={{ "fontSize": '2rem' }}>
                                 FoodDose
                         </Link>
                         </div>
-                        <small class='website-rights'>FoodDose © 2020</small>
+                        <small classN='website-rights' style={{ color: "white" }}>FoodDose © 2020</small>
                         <div class='social-icons'>
                             <Link
                                 class='social-icon-link facebook'

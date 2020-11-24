@@ -1,0 +1,34 @@
+[
+    {
+        "Name": "Fast Food",
+        "Image": "https://i.imgur.com/cG6YlrG.jpg"
+    },
+    {
+        "Name": "Barbecue",
+        "Image": "https://i.imgur.com/Ld99YE6.jpg"
+    },
+    {
+        "Name": "Bakeries",
+        "Image": "https://i.imgur.com/IiMM33k.jpg"
+    },
+    {
+        "Name": "Drinks",
+        "Image": "https://i.imgur.com/z0gj3Nz.jpg"
+    },
+    {
+        "Name": "Healthy Food",
+        "Image": "https://i.imgur.com/7BQNGkX.jpg"
+    },
+    {
+        "Name": "Pasta",
+        "Image": "https://i.imgur.com/BZfPIjH.jpg"
+    },
+    {
+        "Name": "Dessert",
+        "Image": "https://i.imgur.com/hVzMRMz.jpg"
+    },
+    {
+        "Name": "Sea Food",
+        "Image": "https://i.imgur.com/1dqiifQ.jpg"
+    }
+]
