@@ -15,7 +15,7 @@ import Trip from './components/trips/trips'
 import Signup from './components/user/signup'
 import MyTrip from './components/trips/mytrips'
 import Profile from './components/user/Profile';
-import Navbar2 from './components/Homepage/Navbar-login';
+import Navbarinup from './components/Homepage/Navbar-login';
 
 
 class App extends React.Component {
@@ -37,9 +37,11 @@ class App extends React.Component {
     this.test = this.test.bind(this)
 
   }
-  test() {
-    console.log('does it work? really ')
+  test(name, email, pass) {
+    // console.log('does it work? really ' + name + " " + pass + " " + email)
+
   }
+
   changeLogInStatus() {
     this.setState({
       islogin: !this.state.islogin,
@@ -127,11 +129,13 @@ class App extends React.Component {
     }
     if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
       console.log('token')
-      nav = <Navbar2 hello="hello bro" test={this.test}></Navbar2>
+      nav = <Navbar></Navbar>
+
     }
     else {
       console.log('noo token')
-      nav = <Navbar></Navbar>
+      nav = <Navbarinup hello="hello bro" test={this.test}></Navbarinup>
+
     }
     return (
       <>
@@ -169,3 +173,9 @@ class App extends React.Component {
 
 
 export default App;
+
+
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}

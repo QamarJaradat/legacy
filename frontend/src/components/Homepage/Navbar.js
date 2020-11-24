@@ -8,7 +8,7 @@ function Navbar() {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
     //pop up functions
-    
+
 
     return (
         <>
@@ -22,14 +22,14 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/Category' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
+                            <Link to='/Category' className='nav-links fontvav' onClick={closeMobileMenu}>RESTURANTS</Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/user' className='nav-links' onClick={closeMobileMenu}>USER</Link>
+                            <Link to='/user' className='nav-links fontvav' onClick={closeMobileMenu} >USER</Link>
 
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-links' onClick={() => {
+                            <Link className='nav-links fontvav' onClick={() => {
                                 $.ajax({
                                     method: 'POST',
                                     url: '/logout',

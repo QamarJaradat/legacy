@@ -2,7 +2,9 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
+import $ from 'jquery'
 
+//SignUp popUp style
 const Background = styled.div`
   width: 1000%;
   height: 100%;
@@ -12,7 +14,6 @@ const Background = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
 const ModalWrapper = styled.div`
   width: 380px;
   height: 480px;
@@ -24,8 +25,6 @@ const ModalWrapper = styled.div`
   z-index: 10;
   border-radius: 10px;
 `;
-
-
 const ModalContent = styled.div`
   display: flex;
   flex-direction: row;
@@ -51,7 +50,6 @@ const ModalContent = styled.div`
     float: left;
   }
 `;
-
 const CloseModalButton = styled(MdClose)`
   cursor: pointer;
   position: absolute;
@@ -65,6 +63,11 @@ const CloseModalButton = styled(MdClose)`
 
 export const Modal2 = ({ showModal, setShowModal, test }) => {
   const modalRef = useRef();
+  //user data Refs
+  var textInput = React.createRef();
+  var passInput = React.createRef();
+  var emailInput = React.createRef();
+
 
   const animation = useSpring({
     config: {
@@ -108,31 +111,67 @@ export const Modal2 = ({ showModal, setShowModal, test }) => {
                   <h3>Sign Up</h3>
 
                   <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
-                  </div>
-
-                  <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                    <label>user name</label>
+                    <input type="text" className="form-control" ref={textInput} placeholder="First name" />
                   </div>
 
                   <div className="form-group">
                     <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <input type="email" className="form-control" ref={emailInput} placeholder="Enter email" />
                   </div>
 
                   <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input type="password" id='password' ref={passInput} className="form-control" placeholder="Enter password" />
                   </div>
+                  <small id="matchPass" style={{ fontSize: '12px' }}></small>
 
-                  <button type="button" onClick={() => {
-                    test()
+                  <button type="button" onClick={async () => {
+                    var password = passInput.current.value
+                    var username = textInput.current.value
+                    var email = emailInput.current.value
+
+
+                    if (!validateEmail(email)) {
+                      document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'>Wrong Email</div>"
+
+                    }
+                    else {
+                      var data1 = {
+                        userName: username,
+                        userMail: email,
+                        userPass: password
+                      }
+                      $.ajax({
+                        type: "POST",
+                        url: "/signup",
+                        data: data1,
+                        success: function (res) {
+                          console.log("it's working")
+                          window.location.href = "/"
+                        },
+                        error: function (error) {
+                          if (error.status === 451) {
+                            document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your name</div>"
+
+                          }
+                          if (error.status === 411) {
+                            document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your email</div>"
+
+                          }
+                          if (error.status === 421) {
+                            document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your password</div>"
+
+                          }
+                          if (error.status === 406) {
+                            document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> This email has been used</div>"
+
+                          }
+                        }
+                      })
+                    }
                   }} className="btn btn-primary btn-block">Sign Up</button>
-                  <p className="forgot-password text-right">
-                    Already registered <a href=" ">sign in?</a>
-                  </p>
+
                 </form>
               </ModalContent>
               <CloseModalButton
@@ -146,3 +185,10 @@ export const Modal2 = ({ showModal, setShowModal, test }) => {
     </>
   );
 };
+
+
+function validateEmail(email) {
+  // eslint-disable-next-line no-useless-escape
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
