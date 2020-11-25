@@ -27,10 +27,18 @@ routers.post('/get', restController.getrest);
 const feedback = require('./Controller/feedBackController')
 routers.post('/getcat', feedback.getbycat);
 
-const searchController = require('./Controller/searchController')
 
+//Restaurant Search Controller
+const searchController = require('./Controller/searchController')
 routers.post('/searchrest', searchController.searchrest)
 
 
+//Top 5 Restaurant Controller
+const Top5Conntroller = require('./Controller/top5Controller')
+routers.get('/gettop5', (req, res) => {
+    Top5Conntroller.findTop5().then((response) => {
+        res.end(JSON.stringify(response))
+    }).catch((error) => { console.log(error) })
+})
 
 module.exports = routers;

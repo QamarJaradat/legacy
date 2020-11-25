@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from "react-router"
 import "./cardResturant.css"
 
 function CardResturant() {
@@ -16,7 +17,6 @@ function CardResturant() {
                                 alt="" height="100px" width="100px" />
                         </div>
                     </div>
-
                     <div className="LowerContainer">
                         <h3>{name}</h3>
                         <h4>{job}</h4>
@@ -24,6 +24,7 @@ function CardResturant() {
                         <button className="B">Add to Faviorate</button>
                         <br></br>
                         <button className="B">Add your FeedBack</button>
+                        <Link to="/Category/:category/:rest/feedback"></Link>
                     </div>
                 </div>
             </div>
@@ -32,4 +33,3 @@ function CardResturant() {
 }
 
 export default CardResturant
-

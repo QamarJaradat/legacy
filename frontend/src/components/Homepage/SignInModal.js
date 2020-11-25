@@ -27,7 +27,6 @@ const ModalWrapper = styled.div`
   border-radius: 10px;
 `;
 
-
 const ModalContent = styled.div`
   display: flex;
   flex-direction: row;
@@ -95,8 +94,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     },
     [keyPress]
   );
-  
-
   return (
     <>
       {showModal ? (
@@ -137,7 +134,7 @@ export const Modal = ({ showModal, setShowModal }) => {
                           document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your email</div>"
                         }
                         if (error.status === 404) {
-                          document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> Invaild Username</div>"
+                          document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> Invaild Email</div>"
                           //alert('user not existed')
                           console.log(error.responseText)
                         }
