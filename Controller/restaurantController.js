@@ -1,4 +1,4 @@
-const Restaurant = require('../DataModel').resturants
+const restaurants = require('../DataModel').resturants
 const restData = require('../restdata/restaurant.json')
 
 

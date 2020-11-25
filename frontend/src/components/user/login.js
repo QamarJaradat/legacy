@@ -22,7 +22,7 @@ class Login extends React.Component {
     }
     $.ajax({
       type: "POST",
-      url: "/login",
+      url: "/signin",
       data: data,
       success: (res) => {
         console.log(this.props)
@@ -76,8 +76,6 @@ class Login extends React.Component {
               <div>
                 <label>Your Email</label>
                 <input type="email" className="form-control inputhover" name="email" placeholder="Email" onChange={this.handelchange} />
-                {/* <small id="logErr"></small> */}
-                {/* <small id="emptyuser"></small> */}
               </div>
               <div>
                 <label>Password</label>

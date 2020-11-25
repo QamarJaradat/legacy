@@ -22,51 +22,38 @@ class Section extends React.Component {
         this.state = {
             searchVal: '',
         }
-        this.updateSearch = this.updateSearch.bind(this)
-        this.searching = this.searching.bind(this)
+
     }
-    updateSearch = (e) => {
-        
-        this.setState({
-            [e.target.name]: e.target.value,
-        })
-    };
-    searching() {
-        var searchRes = this.state.searchVal
-        $.ajax({
-            type: "POST",
-            url: "/",
-            data: {help:searchRes},
-            success: function (res) {
-                console.log("it's working")
-                
-            },
-        })
-    }
+
+
     render() {
         const { search } = this.state;
         return (
             <>
-                <div className='imageslider'>
-                    <br></br>
-                    <br></br>
-                    <h1>THIS IS A TEXT</h1>
-                    <br></br>
-
-
-
-                    <form class="form-inline">
-                        <label>
-                            <input type="string" value={search} className="form-control inputhover" onChange={this.updateSearch} name="searchVal" placeholder="search for idk lol" />
-                            <span></span>
-                        </label>
-                        <button class="btn btn-outline-success my-2 my-sm-0" onClick={this.searching} type="button">Search</button>
-
-                        <br></br>
-
+                <div className='imageslider '>
+                    <div className='secimg'>
                         <br></br>
                         <br></br>
-                    </form>
+                        <h1 className="restqo">Nothing Brings People Together Like Good Food</h1>
+                        <br></br>
+
+
+
+                        <form>
+                            <label> <span>
+                                <input type="string" value={search} className="form-control  inputhover" onChange={this.props.updateSearch} name="searchVal" placeholder="search for Restaurant . . ." />
+                                <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.props.searching} type="button">Search</button>
+
+                            </span>
+                            </label>
+                            <br></br>
+
+                            <br></br>
+
+                            <br></br>
+                            <br></br>
+                        </form>
+                    </div>
 
                 </div>
 

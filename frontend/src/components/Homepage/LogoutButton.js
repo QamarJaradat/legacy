@@ -27,7 +27,7 @@ export const Button = ({
                 onClick={() => {
                     $.ajax({
                         method: 'POST',
-                        url: '/logout',
+                        url: '/signout',
                         success: (res) => {
                             console.log('see you another time')
                             window.location.href = "/"
