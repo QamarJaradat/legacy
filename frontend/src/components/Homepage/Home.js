@@ -78,7 +78,9 @@ class Home extends React.Component {
                     style={{ "marginBottom": '50px', marginTop: "18px" }}>
                     {ele}
                 </div>
-                <di>
+
+
+                <div >
                     <h3>Top Rated Restaurans</h3>
                     <div className="d-flex flex-wrap justify-content-around catdiv"
                         style={{ "marginBottom": '50px', marginTop: "18px" }}>
@@ -95,7 +97,7 @@ class Home extends React.Component {
                             )
                         }
                     </div>
-                </di>
+                </div>
             </div>
         )
     }

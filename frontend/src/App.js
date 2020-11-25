@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery'
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 
@@ -59,7 +60,7 @@ class App extends React.Component {
   }
 
   render() {
-    let nav 
+    let nav
     if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
       console.log('token')
       nav = <Navbar></Navbar>
@@ -75,8 +76,8 @@ class App extends React.Component {
           <Switch>
             <Route
               path="/"
-              exact render={(props) => <Home userid={this.state.userid}/>}/>
-            <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}/>
+              exact render={(props) => <Home userid={this.state.userid} />} />
+            <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />} />
             <Route path="/Category" exact component={Categories} />
             <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
