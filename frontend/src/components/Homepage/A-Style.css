@@ -434,7 +434,7 @@ video {
       text-decoration: none !important;
     }
     .navbar-logo :hover {
-      color: rgb(236, 219, 219);
+      color: #ffdfae;
       text-decoration: none !important;
     }
     
@@ -468,7 +468,7 @@ video {
     }
     
     .nav-links:hover {
-      border-bottom: 4px solid #FDEDF4;
+      border-bottom: 4px solid #ffdfae;
       transition: all 0.2s ease-out;
       text-decoration: none ;
       color: #FDEDF4;

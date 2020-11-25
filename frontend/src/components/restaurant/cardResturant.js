@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from "react-router"
 import "./cardResturant.css"
-import { Link } from 'react-router'
 
 function CardResturant() {
     const [name, setName] = useState("Resturant Name")
@@ -17,7 +17,6 @@ function CardResturant() {
                                 alt="" height="100px" width="100px" />
                         </div>
                     </div>
-
                     <div className="LowerContainer">
                         <h3>{name}</h3>
                         <h4>{job}</h4>

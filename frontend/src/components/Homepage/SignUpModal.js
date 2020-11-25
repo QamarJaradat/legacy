@@ -68,7 +68,6 @@ export const Modal2 = ({ showModal, setShowModal, test }) => {
   var passInput = React.createRef();
   var emailInput = React.createRef();
 
-
   const animation = useSpring({
     config: {
       duration: 250
@@ -109,32 +108,25 @@ export const Modal2 = ({ showModal, setShowModal, test }) => {
               <ModalContent>
                 <form>
                   <h3>Sign Up</h3>
-
                   <div className="form-group">
                     <label>user name</label>
                     <input type="text" className="form-control" ref={textInput} placeholder="First name" />
                   </div>
-
                   <div className="form-group">
                     <label>Email address</label>
                     <input type="email" className="form-control" ref={emailInput} placeholder="Enter email" />
                   </div>
-
                   <div className="form-group">
                     <label>Password</label>
                     <input type="password" id='password' ref={passInput} className="form-control" placeholder="Enter password" />
                   </div>
                   <small id="matchPass" style={{ fontSize: '12px' }}></small>
-
                   <button type="button" onClick={async () => {
                     var password = passInput.current.value
                     var username = textInput.current.value
                     var email = emailInput.current.value
-
-
                     if (!validateEmail(email)) {
                       document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'>Wrong Email</div>"
-
                     }
                     else {
                       var data1 = {
@@ -153,19 +145,15 @@ export const Modal2 = ({ showModal, setShowModal, test }) => {
                         error: function (error) {
                           if (error.status === 451) {
                             document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your name</div>"
-
                           }
                           if (error.status === 411) {
                             document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your email</div>"
-
                           }
                           if (error.status === 421) {
                             document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your password</div>"
-
                           }
                           if (error.status === 406) {
                             document.getElementById("matchPass").innerHTML = "<div class='alert alert-danger' role='alert'> This email has been used</div>"
-
                           }
                         }
                       })
@@ -185,7 +173,6 @@ export const Modal2 = ({ showModal, setShowModal, test }) => {
     </>
   );
 };
-
 
 function validateEmail(email) {
   // eslint-disable-next-line no-useless-escape

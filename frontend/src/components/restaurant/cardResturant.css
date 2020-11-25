@@ -35,11 +35,7 @@ margin-left:25%;
 
 }
 
-img{
-    /* border:2px solid; */
-    /* margin-left:50%;
-margin-right:50%; */
-}
+
 
 .LowerContainer {
     margin-top:77px;
@@ -57,6 +53,7 @@ margin-right:50%; */
     color:#2f2d2e;
     font-weight:600;
     font-size:1.5rem;
+    text-align: center;
 }
 .LowerContainer h4{
     color:#ff494e;

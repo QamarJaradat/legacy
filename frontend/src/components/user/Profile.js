@@ -128,7 +128,7 @@ class Profile extends React.Component {
         
       </div>
       <div className="fav">
-         <h4 className="text">Your Top Rated Restaurants</h4>
+         <h4 className="text">Your Restaurants FeedBack</h4>
       </div>
       <div className="box2">
         
