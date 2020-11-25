@@ -3,7 +3,9 @@ const bcrypt = require('bcryptjs')
 //JWT
 const jwt = require('jsonwebtoken');
 exports.signUpUser = async (req, res) => {
+    console.log(req.body)
     const salt = await bcrypt.genSalt(10)
+    
     const hashedPass = await bcrypt.hash(req.body.userPass, salt)
     // User Data when Signing up
     // console.log(req.body)
