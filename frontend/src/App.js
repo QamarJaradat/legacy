@@ -6,6 +6,7 @@ import $ from 'jquery'
 import Categories from './components/Homepage/Categories'
 import Restaurants from './components/restaurant/restaurants'
 import OneRest from './components/restaurant/onerestaurant'
+import Feedback from './components/user/starrate'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
@@ -155,7 +156,7 @@ class App extends React.Component {
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
-            <Route path="/Category" exact component={Categories} />
+            <Route path="/Category" exact component={Feedback} />
             <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
             <Route path="/Category/:category/:rest" exact component={CardResturant} />
