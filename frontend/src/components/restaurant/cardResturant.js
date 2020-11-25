@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router"
 import "./cardResturant.css"
 
+
 function CardResturant() {
     const [name, setName] = useState("Resturant Name")
     const [job, setJob] = useState("Rest Number")

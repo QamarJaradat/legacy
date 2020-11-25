@@ -1,0 +1,45 @@
+.test{
+    height:142vh;
+    background-image:url('https://www.orbisrealty.com/wp-content/uploads/2019/07/o-TOURIST-facebook.jpg');
+    background-size: cover;
+    object-position: 50% 50%;
+
+}
+.starbutton{
+    display: none;
+}
+.star{
+    cursor: pointer;
+    transition: 200ms;
+}
+
+html, body {
+    margin:0px;
+    height:100%;
+}
+
+#signup,#signin{
+    background-color: rgba(255, 255, 255, 0.603);
+    height:142vh;
+}
+ 
+/* .inputhover:checked{
+
+   border-color: blueviolet;
+   border-width: 4px;
+    transition: 0.3s;
+} */
+
+.inputhover{
+    width: 650px;
+    margin: auto;
+}
+#LoginupSwitch:hover {
+    color : rgb(20, 20, 133) !important;
+    cursor: pointer;
+}  
+ 
+form{
+    margin-left: 10%;
+    margin-right: 10%;
+}

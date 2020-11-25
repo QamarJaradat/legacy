@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery'
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 
