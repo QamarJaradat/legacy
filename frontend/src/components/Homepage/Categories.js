@@ -12,11 +12,9 @@ class Categories extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
   }
-
   render() {
-    console.log(Category[0].Name)
     return (
-      <>
+      <div className="homediv">
         <div className="d-flex flex-wrap justify-content-around catdiv" style={{
           "marginBottom": '50px', marginTop: "18px"
         }}  >
@@ -25,12 +23,10 @@ class Categories extends React.Component {
               <div style={{ 'text-align': 'center', marginTop: '45px' }} key={i} > <Link to={{
                 pathname: `/Category/${item.Name}`,
                 state: { whichcat: item.Name }
-
               }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstyle"
                 whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p>
               </div>)}
         </div>
-
         <div className="d-flex flex-wrap justify-content-around catdiv" style={{
           "marginBottom": '50px', marginTop: "18px"
         }}  >
@@ -39,13 +35,11 @@ class Categories extends React.Component {
               <div style={{ 'text-align': 'center' }} key={i} > <Link to={{
                 pathname: `/Category/${item.Name}`,
                 state: { whichcat: item.Name }
-
               }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstyle"
                 whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p>
               </div>)}
         </div>
-
-      </>
+      </div>
     )
   }
 }
