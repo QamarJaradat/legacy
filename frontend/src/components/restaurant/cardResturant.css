@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+
+
+
+.mainContainer{
+    padding: 130px;
+    display:flex;
+    width:100%;
+    height:100 ;
+    justify-content: center;
+    align-items: center;
+}
+.Card{
+width:700px;
+height:800px;
+background: white;
+border-radius: 10px;
+box-shadow:0px 1px 10px 1px black;
+overflow: hidden;
+}
+.UpperContainer{
+height:100px;
+background:linear-gradient(to left, #ff8149, #ff494e)
+}
+
+.imgContainer img{
+background: white;
+height:130px;
+width:130px;
+border-radius: 50%;
+padding:5px;
+transform: translate(95px,45px);
+margin-left:25%;
+/* margin-right:25%; */
+
+}
+
+
+
+.LowerContainer {
+    margin-top:77px;
+    height:300px;
+    background:white;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.LowerContainer h3 h4 p{
+    margin:0;
+    padding:0;
+}
+.LowerContainer h3{
+    color:#2f2d2e;
+    font-weight:600;
+    font-size:1.5rem;
+    text-align: center;
+}
+.LowerContainer h4{
+    color:#ff494e;
+    font-weight:700;
+    font-size:1.2rem;
+}
+.LowerContainer p{
+    margin:1rem;
+    font-weight:700;
+    color:#2f2d2e;
+    font-size:0.9rem;
+    /* Justify if it was long !! */
+    text-align: center;
+}
+.B{
+    margin:1rem;
+    margin-top: 0;
+    color:#2f2d2e;
+    font:bold;
+    background-color: white;
+    border: 2px solid #ff494e;
+    padding:0.6rem;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+    animation: ease-in-out;
+}
+.B:hover{
+    background-image:linear-gradient(to left, #ff8149, #ff494e);
+    transform: scale(1.1);
+    border:none;
+    color:white;
+}

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import './A-Style.css';
-
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Modal } from './SignInModal';
@@ -41,20 +40,20 @@ function Navbar(props) {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/Category' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
+                            <Link to='/Category' className='nav-links fontvav' onClick={closeMobileMenu}>CATEGORIES</Link>
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-links' onClick={openModal}>SIGN IN</Link>
+                            <Link className='nav-links fontvav' onClick={openModal}>SIGN IN</Link>
                             <Container>
                                 <Modal className='containerPop' showModal={showModal} setShowModal={setShowModal} />
                             </Container>
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-links' onClick={openModal2}>SIGN UP</Link>
+                            <Link className='nav-links fontvav' onClick={openModal2}>SIGN UP</Link>
                             <Container>
                                 <Modal2 showModal={showModal2} setShowModal={setShowModal2} test={props.test} hello={props.hello} />
                             </Container>
-                            <Link className='nav-links' onClick={closeMobileMenu}>SIGN UP</Link>
+                            <Link className='nav-links fontvav' onClick={closeMobileMenu}>SIGN UP</Link>
                         </li>
                     </ul>
                 </div>

@@ -6,16 +6,14 @@ exports.signUpUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const hashedPass = await bcrypt.hash(req.body.userPass, salt)
     // User Data when Signing up
-    console.log(req.body)
-    userMail = req.body.userMail
-    userpas = req.body.userPass
+    // console.log(req.body)
     if (!req.body.userName) {
         return res.status(451).send('error')
     }
-    if (!userpas) {
+    if (!req.body.userPass) {
         return res.status(421).send('error')
     }
-    if (!userMail) {
+    if (!req.body.userMail) {
         return res.status(411).send('error')
     }
 
@@ -28,9 +26,9 @@ exports.signUpUser = async (req, res) => {
             var newuser = new UserModel()
             newuser.userName = req.body.userName
             newuser.userMail = req.body.userMail
-            newuser.userimage = req.body.userimage
+            // newuser.userimage = req.body.userimage
             newuser.userPass = hashedPass
-            newuser.userNum = req.body.userNum
+            // newuser.userNum = req.body.userNum
             newuser.feedBack = []
             newuser.favoriteRes = []
             newuser.save((err, saveduse) => {

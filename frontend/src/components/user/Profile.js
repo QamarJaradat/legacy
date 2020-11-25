@@ -32,7 +32,6 @@ class Profile extends React.Component {
     }
     var array = []
     if (this.props.userid.trips) {
-      // console.log(this.props.userid.trips)
       var mytrips = this.props.userid.trips
       for (var i in mytrips) {
         $.ajax({
@@ -55,7 +54,6 @@ class Profile extends React.Component {
   }
   componentWillMount() {
     document.documentElement.scrollTop = 0;
-    // $.get('/getuserinfo', { data: this.props.userid })
 
   }
   render() {
@@ -88,54 +86,60 @@ class Profile extends React.Component {
       cards = <div>No Booked Trips Yet</div>
     }
     return (
-      <div className="imgdiv">
-        <div className="row" id="row">
-          <div id="profile" className="col-sm-4 right" >
-            <br></br>
-            <br></br>
-            <br></br>
-            <div className='picContainer'>
-              <img className="img1"
-                src={this.state.profileimg}
-                alt="userPic"
-              />
-            </div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <div className='textContainer' >
-              <div>
-                <h4 className="text">Name</h4>
-                <h6 className="text1">{this.props.userid.userName}</h6>
+    <div className="container">
+      <div className="box1">
+         <div className="row">
+            <div className="col-sm-4 col-md-4 col-lg-4 text-center">
+               <div className='picContainer'>
+               <br></br>
+               <br></br>
+               <br></br>
+               <br></br>
+                 <img className="img1"  
+                   src={this.state.profileimg}
+                   alt="userPic"
+                    />
               </div>
-              <div>
-                <h4 className="text">Email</h4>
-                <h6 className="text1">{this.props.userid.userMail}</h6>
+           </div>
+          <div className="col-sm-4 col-md-4 col-lg-4"> 
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+               <div>
+                  <h4 className="text1">Name</h4>
+                  <h6 className="text1">{this.props.userid.userName}</h6>
+               </div>
+               <br></br>
+               <div>
+                  <h4 className="text1">Email</h4>
+                  <h6 className="text1">{this.props.userid.userMail}</h6>
               </div>
-              <div>
-                <h4 className="text">Phone Number</h4>
-                <h6 className="text1">{this.props.userid.userNum}</h6>
-              </div>
-            </div>
-          </div>
-          <div className="col left" id="column">
-            <div className='cards__container' id="cards__container1">
-              <div className="cards__wrapper">
-                <br></br>
-                <br></br>
-                <div className="textContainer">
-                  <h4 className="text">Booked Trips</h4>
-                </div>
-                <br></br>
-                {cards}
-              </div>
-            </div>
-          </div>
-        </div>
+         </div>
+       </div>
+
       </div>
+      {/*Faviorate and top rated*/}
+      <div className="fav">
+         <h4 className="text">Your Faviorate Restaurants</h4>
+      </div>
+      <div className="box2">
+        
+      </div>
+      <div className="fav">
+         <h4 className="text">Your Restaurants FeedBack</h4>
+      </div>
+      <div className="box2">
+        
+      </div>
+    </div> 
     )
   }
 
 }
 
 export default Profile;
+
+
+
