@@ -6,7 +6,8 @@
         "categoty": [
             "Fast Food"
         ],
-        "Address": "Ain Sara street-Hebron"
+        "Address": "Ain Sara street-Hebron",
+        "restaurantRate": 2.4
     },
     {
         "Name": "Shawerma Al-Rayan ",
@@ -16,7 +17,8 @@
             "Fast Food",
             "Barbecue"
         ],
-        "Address": "Al Salam street-Hebron"
+        "Address": "Al Salam street-Hebron",
+        "restaurantRate": 2
     },
     {
         "Name": "Chili House",
@@ -28,7 +30,8 @@
             "Dessert",
             "Sea Food"
         ],
-        "Address": "Al Ahli street-Hebron"
+        "Address": "Al Ahli street-Hebron",
+        "restaurantRate": 3.9
     },
     {
         "Name": "Hikayat Bahar",
@@ -38,7 +41,8 @@
             "Pasta",
             "Sea Food"
         ],
-        "Address": "Dahiat Alramah-Hebron"
+        "Address": "Dahiat Alramah-Hebron",
+        "restaurantRate": 2.5
     },
     {
         "Name": "Safienat al sayad",
@@ -49,6 +53,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 2.1,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -60,6 +65,7 @@
             "Barbecue",
             "Sea Food"
         ],
+        "restaurantRate": 4,
         "Address": "Al Haras street-Hebron"
     },
     {
@@ -72,6 +78,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 4.2,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -81,6 +88,7 @@
         "categoty": [
             "Fast Food"
         ],
+        "restaurantRate": 3,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -91,6 +99,7 @@
             "Drinks",
             "Fast Food"
         ],
+        "restaurantRate": 3.8,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -101,6 +110,7 @@
             "Healthy Food",
             "Pasta"
         ],
+        "restaurantRate": 2,
         "Address": "Namera street-Hebron"
     },
     {
@@ -113,6 +123,7 @@
             "Barbecue",
             "Sea Food"
         ],
+        "restaurantRate": 2.3,
         "Address": "Ain Arab street-Hebron"
     },
     {
@@ -124,6 +135,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 2.6,
         "Address": "Hebron University street"
     },
     {
@@ -136,6 +148,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 2.7,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -149,6 +162,7 @@
             "Healthy Food",
             "Barbecue"
         ],
+        "restaurantRate": 4.2,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -161,6 +175,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 2,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -172,6 +187,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 2,
         "Address": "Al Salam street-Hebron"
     },
     {
@@ -186,6 +202,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 2,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -198,6 +215,7 @@
             "Fast Food",
             "Healthy Food"
         ],
+        "restaurantRate": 2,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -212,6 +230,7 @@
             "Pasta",
             "Barbecue"
         ],
+        "restaurantRate": 3.7,
         "Address": "Al Haras street-Hebron"
     },
     {
@@ -224,6 +243,7 @@
             "Fast Food",
             "Healthy Food"
         ],
+        "restaurantRate": 3.2,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -235,6 +255,7 @@
             "Sea Food",
             "Pasta"
         ],
+        "restaurantRate": 3,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -246,6 +267,7 @@
             "Sea Food",
             "Healthy Food"
         ],
+        "restaurantRate": 3.3,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -255,13 +277,8 @@
         "categoty": [
             "Dessert"
         ],
+        "restaurantRate": 3,
         "Address": "Ain Sara street-Hebron"
-    },
-    {
-        "Name": "Paradise Sweets ",
-        "Image": "https://scontent.fjrs4-1.fna.fbcdn.net/v/t1.0-0/p206x206/59574156_2263063893955838_6667895817476505600_o.png?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=0yjTuZWruWQAX9J3qQR&_nc_ht=scontent.fjrs4-1.fna&oh=9d5a87d91570367c5cc1df5e235e365f&oe=5FDAD660",
-        "Phone": "0599944223",
-        "Address": "Ras AlJura-Hebron"
     },
     {
         "Name": "Al Sahel Al Akhdar Sweets",
@@ -270,6 +287,7 @@
         "categoty": [
             "Dessert"
         ],
+        "restaurantRate": 3.4,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -280,6 +298,7 @@
             "Dessert",
             "Bakeries"
         ],
+        "restaurantRate": 3,
         "Address": "Hebron University street"
     },
     {
@@ -289,6 +308,7 @@
         "categoty": [
             "Bakeries"
         ],
+        "restaurantRate": 3.6,
         "Address": "Ras AlJura-Hebron"
     },
     {
@@ -300,6 +320,7 @@
             "Pasta",
             "Sea Food"
         ],
+        "restaurantRate": 4,
         "Address": "Ibn Rushd square-Hebron"
     },
     {
@@ -310,6 +331,7 @@
             "Dessert",
             "Fast Food"
         ],
+        "restaurantRate": 3,
         "Address": "Hebron"
     },
     {
@@ -320,6 +342,7 @@
             "Dessert",
             "Bakeries"
         ],
+        "restaurantRate": 3,
         "Address": "Al Salam street-Hebron"
     },
     {
@@ -331,6 +354,7 @@
             "Drinks",
             "Fast Food"
         ],
+        "restaurantRate": 3,
         "Address": "Ain Arab street-Hebron"
     },
     {
@@ -341,6 +365,7 @@
             "Dessert",
             "Drinks"
         ],
+        "restaurantRate": 1.5,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -352,6 +377,7 @@
             "Drinks",
             "Healthy Food"
         ],
+        "restaurantRate": 3,
         "Address": "Al Haras street-Hebron"
     },
     {
@@ -363,6 +389,7 @@
             "Bakeries",
             "Barbecue"
         ],
+        "restaurantRate": 3,
         "Address": "Dwear ban-Hebron"
     },
     {
@@ -372,6 +399,7 @@
         "categoty": [
             "Bakeries"
         ],
+        "restaurantRate": 0.8,
         "Address": "Al Salam street-Hebron"
     },
     {
@@ -382,6 +410,7 @@
             "Dessert",
             "Bakeries"
         ],
+        "restaurantRate": 3,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -391,6 +420,7 @@
         "categoty": [
             "Bakeries"
         ],
+        "restaurantRate": 3,
         "Address": "Al jaladah-Hebron"
     },
     {
@@ -402,6 +432,7 @@
             "Drinks",
             "Bakeries"
         ],
+        "restaurantRate": 3,
         "Address": "Ibn Rushd square-Hebron"
     },
     {
@@ -416,6 +447,7 @@
             "Healthy Food",
             "Barbecue"
         ],
+        "restaurantRate": 3.8,
         "Address": "Ain Sara street-Hebron"
     },
     {
@@ -429,6 +461,7 @@
             "Drinks",
             "Healthy Food"
         ],
+        "restaurantRate": 3,
         "Address": "Al Haras street-Hebron"
     },
     {
@@ -438,6 +471,7 @@
         "categoty": [
             "Dessert"
         ],
+        "restaurantRate": 3.9,
         "Address": "Al Haras street-Hebron"
     }
 ]

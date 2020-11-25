@@ -32,4 +32,3 @@ function CardResturant() {
 }
 
 export default CardResturant
-

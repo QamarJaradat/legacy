@@ -19,7 +19,7 @@ let resturantSchema = mongoose.Schema({
     Phone: String,
     Image: String,
     resturantFeedback: { type: Array },
-    resturantRate: Number
+    restaurantRate: Number
 })
 
 let userSchema = mongoose.Schema({

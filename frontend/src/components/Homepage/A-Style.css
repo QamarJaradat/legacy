@@ -626,3 +626,24 @@ footer {
     border-radius: 30px ;
     margin-bottom: 18px;
   }
+
+  .Bsearch{
+    margin:1rem;
+    margin-top: 0;
+    color:rgb(0, 0, 0);
+    font:bold;
+    width: 13%;
+    background-image:linear-gradient(to right, #f5a52e, #ff5d62);
+    /* border: 2px solid black; */
+    border-color: none;
+    padding:0.6rem;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+    animation: ease-in-out;
+}
+.Bsearch:hover{
+    background-image:linear-gradient(to left, #f5a52e, #ff5d62);
+    transform: scale(1.1);
+    border:none;
+    color:white;
+}

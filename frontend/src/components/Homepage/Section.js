@@ -39,20 +39,18 @@ class Section extends React.Component {
 
 
 
-                        <form>
-                            <label> <span>
-                                <input type="string" value={search} className="form-control  inputhover" onChange={this.props.updateSearch} name="searchVal" placeholder="search for Restaurant . . ." />
-                                <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.props.searching} type="button">Search</button>
 
-                            </span>
-                            </label>
-                            <br></br>
 
-                            <br></br>
+                        <input type="string" value={search} className="form-control  inputhover" onChange={this.props.updateSearch} name="searchVal" placeholder="search for Restaurant . . ." />
+                        <button className="btn  Bsearch my-2 my-sm-0" onClick={this.props.searching} type="button">Search</button>
 
-                            <br></br>
-                            <br></br>
-                        </form>
+                        <br></br>
+
+                        <br></br>
+
+                        <br></br>
+                        <br></br>
+
                     </div>
 
                 </div>

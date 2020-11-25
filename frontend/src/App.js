@@ -17,6 +17,7 @@ import MyTrip from './components/trips/mytrips'
 import Profile from './components/user/Profile';
 import Navbarinup from './components/Homepage/Navbar-login';
 import CardResturant from './components/restaurant/cardResturant.js'
+import Feedback from './components/restaurant/feedback'
 
 
 class App extends React.Component {
@@ -155,7 +156,7 @@ class App extends React.Component {
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
-            <Route path="/Category" exact component={Categories} />
+            <Route path="/Category" exact component={Feedback} />
             <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
             <Route path="/Category/:category/:rest" exact component={CardResturant} />
