@@ -635,7 +635,7 @@ footer {
     width: 13%;
     background-image:linear-gradient(to right, #f5a52e, #ff5d62);
     /* border: 2px solid black; */
-    border-color: none;
+    /* border-color: none; */
     padding:0.6rem;
     border-radius: 6px;
     transition-duration: 0.5s;
@@ -644,6 +644,6 @@ footer {
 .Bsearch:hover{
     background-image:linear-gradient(to left, #f5a52e, #ff5d62);
     transform: scale(1.1);
-    border:none;
+    /* border:none; */
     color:white;
 }

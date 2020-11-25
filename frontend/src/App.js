@@ -156,10 +156,11 @@ class App extends React.Component {
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
-            <Route path="/Category" exact component={Feedback} />
+            <Route path="/Category" exact component={Categories} />
             <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
             <Route path="/Category/:category/:rest" exact component={CardResturant} />
+            <Route path="/feedback" exact component={Feedback} />
 
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>

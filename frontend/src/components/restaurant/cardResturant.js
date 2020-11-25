@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./cardResturant.css"
+import { Link } from 'react-router'
 
 function CardResturant() {
     const [name, setName] = useState("Resturant Name")
@@ -23,7 +24,12 @@ function CardResturant() {
                         <p>{about}</p>
                         <button className="B">Add to Faviorate</button>
                         <br></br>
-                        <button className="B">Add your FeedBack</button>
+                        <Link to='/feedback'>
+                            <button className="B" onClick={() => {
+                                window.location.href = "/feedback"
+
+                            }}>Add your FeedBack</button>
+                        </Link>
                     </div>
                 </div>
             </div>
