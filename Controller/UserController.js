@@ -83,7 +83,7 @@ exports.checkuser = (req, res) => { return (req.user) }
 
 exports.getuserinfo = (req, res) => {
     UserModel.findOne({ _id: req.body.id }, (err, userData) => {
-        console.log(req.body._id)
+        // console.log(req.body._id)
         if (err) {
             console.log(err)
             return res.status(500).send('error')
