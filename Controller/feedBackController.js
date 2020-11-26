@@ -35,6 +35,7 @@ exports.addFeedBack = (req, res) => {
                                 rate: req.body.rate
                             }
                             data.resturantFeedback.push(feedback)
+                            var rate = average(data.resturantFeedback)
                             ResturantModel.update({ _id: resturantid }, { resturantFeedback: data.resturantFeedback }, (err, data) => {
                                 if (err)
                                     return res.status(400).send('error')
@@ -60,4 +61,8 @@ exports.getbycat = (req, res) => {
             return res.status(402).send('not found category')
         return res.status(200).send(data)
     })
+}
+
+function average(nums) {
+    return nums.reduce((a, b) => (a + b)) / nums.length;
 }

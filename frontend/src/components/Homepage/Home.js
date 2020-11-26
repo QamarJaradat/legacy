@@ -16,6 +16,7 @@ class Home extends React.Component {
         this.updateSearch = this.updateSearch.bind(this)
         this.searching = this.searching.bind(this)
     }
+
     //to get all Reastaurant that match the search
     searching() {
         var searchRes = this.state.searchVal
@@ -30,15 +31,16 @@ class Home extends React.Component {
             },
         })
     }
+
     //get search bar value
     updateSearch = (e) => {
         this.setState({
             [e.target.name]: e.target.value,
         })
     };
+
     componentDidMount() {
         document.documentElement.scrollTop = 0;
-
         //get the top 5 Restaurant from the DB
         $.ajax({
             type: "GET",
@@ -61,8 +63,8 @@ class Home extends React.Component {
                         <div style={{ 'text-align': 'center' }} key={i} > <div style={{ margin: '10px 0 10px 0' }}><Link to={{
                             pathname: `/restaurant`,
                             state: {
-                                whichcat: item.Name,
-
+                                therest: item,
+                                userid: this.props.userid
                             }
                         }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstylesearch"
                             whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p></div>
@@ -75,7 +77,6 @@ class Home extends React.Component {
         else {
             ele = <h5>No Reault to Show ...</h5>
         }
-
         return (
             <div className='homediv'>
                 <Section searching={this.searching} updateSearch={this.updateSearch} />
@@ -83,8 +84,6 @@ class Home extends React.Component {
                     style={{ "marginBottom": '50px', marginTop: "18px" }}>
                     {ele}
                 </div>
-
-
                 <div >
                     <h3>Top Rated Restaurans</h3>
                     <div className="d-flex flex-wrap justify-content-around catdiv"
@@ -95,7 +94,8 @@ class Home extends React.Component {
                                     <Link to={{
                                         pathname: `/restaurant`,
                                         state: {
-                                            whichcat: item.Name,
+                                            therest: item,
+                                            userid: this.props.userid
                                         }
                                     }}>
                                         <img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstylesearch"

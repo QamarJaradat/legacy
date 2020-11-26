@@ -15,7 +15,7 @@ import Feedback from './components/restaurant/feedback'
 import Categories from './components/Homepage/Categories'
 import Restaurants from './components/restaurant/restaurants'
 import CardResturant from './components/restaurant/cardResturant.js'
-import OneRest from './components/restaurant/onerestaurant'
+// import OneRest from './components/restaurant/onerestaurant'
 
 class App extends React.Component {
   constructor(props) {
@@ -82,6 +82,7 @@ class App extends React.Component {
             <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
             <Route path="/Category/:category/:rest" exact component={CardResturant} />
+            <Route path="/user/:rest" exact component={CardResturant} />
             <Route path="/feedback" exact component={Feedback} />
           </Switch>
           <Footer />

@@ -9,15 +9,49 @@ class CardResturant extends React.Component {
         this.state = {
             user: this.props.location.state.userid,
             rest: this.props.location.state.therest,
-            count: 0
+            count: 0,
+            color: 'withe',
+            txtcolor: 'black'
         }
         this.addfav = this.addfav.bind(this)
+        this.removefav = this.removefav.bind(this)
+
     }
     componentDidMount() {
+
         this.setState({
             user: this.props.location.state.userid,
-            // rest: this.props.location.state.therest
         })
+        $.ajax({
+            method: 'POST',
+            url: '/getuserinfo',
+            data: { id: this.state.user._id },
+            success: (resin) => {
+                console.log(resin._id)
+                this.setState({
+                    user: resin
+                })
+                if (this.state.user.favoriteRes.includes(this.state.rest._id)) {
+                    console.log('findit')
+                    this.setState({
+                        count: 1,
+                        color: 'red',
+                        txtcolor: "white"
+                    })
+                }
+                else {
+                    this.setState({
+                        count: 0,
+                        color: 'white',
+                        txtcolor: "black"
+                    })
+                }
+            },
+            error: (err) => {
+                console.log(err)
+            }
+        })
+
         $.ajax({
             method: 'POST',
             url: "/getonerest",
@@ -31,20 +65,49 @@ class CardResturant extends React.Component {
                 console.log('err')
             }
         })
-        // console.log(this.props.location.state.therest)
 
     }
-    addfav() {
+
+    removefav() {
         var data = {
             uid: this.state.user._id,
             rid: this.state.rest._id
         }
+        $.ajax({
+            method: 'POST',
+            url: "/removefav",
+            data: data,
+            success: (res) => {
+                this.setState({
+                    rest: res,
+                    count: 0,
+                    color: 'white',
+                    txtcolor: "black",
+                })
+            },
+            error: (err) => {
+                console.log('err')
+            }
+        })
+
+    }
+    addfav() {
+
+        var data = {
+            uid: this.state.user._id,
+            rid: this.state.rest._id
+        }
+        if (this.state.count === 1) {
+            this.removefav()
+        }
+
         if (this.state.count !== 1)
             $.ajax({
                 method: 'POST',
                 url: "/addfav",
                 data: data,
                 success: (res) => {
+                    console.log('iiin')
                     $.ajax({
                         method: 'POST',
                         url: "/getonerest",
@@ -52,16 +115,15 @@ class CardResturant extends React.Component {
                         success: (res) => {
                             this.setState({
                                 rest: res,
-                                count: 1
+                                count: 1,
+                                color: 'red',
+                                txtcolor: "white"
                             })
-                            // window.location.reload()
-
                         },
                         error: (err) => {
                             console.log('err')
                         }
                     })
-
                 },
                 error: (err) => {
                     console.log('err')
@@ -87,7 +149,7 @@ class CardResturant extends React.Component {
                                 <p>Rate {this.state.rest.restaurantRate} </p>
                                 <p> Likes {this.state.rest.Likes.length}   </p>
                             </span>
-                            <button className="B" onClick={this.addfav} >Add to Faviorate</button>
+                            <button className="B" onClick={this.addfav} style={{ backgroundColor: this.state.color, color: this.state.txtcolor }} >Add to Faviorate</button>
 
                             <br></br>
                             <Link to={{
