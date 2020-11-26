@@ -50,10 +50,11 @@ npm install
 
 npm start 
 ```
-wait until your localhost is open at 3000
-Note: backend is connected with frontend using proxy.
+3. wait until your localhost is open at 3000
+4. Note: backend is connected with frontend using proxy.
 
 ### Picture Documentation
 
+![Home Page]([img]https://i.imgur.com/Eqbuf6b.png[/img])
 
 
