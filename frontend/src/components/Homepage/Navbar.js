@@ -2,14 +2,11 @@ import { Link } from "react-router-dom";
 import './A-Style.css';
 import $ from 'jquery'
 import React, { useState } from 'react';
-// 
+
 function Navbar() {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
-    //pop up functions
-
-
     return (
         <>
             <nav className='navbar'>
@@ -22,11 +19,10 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/Category' className='nav-links fontvav' onClick={closeMobileMenu}>RESTURANTS</Link>
+                            <Link to='/Category' className='nav-links fontvav' onClick={closeMobileMenu}>CATEGORIES</Link>
                         </li>
                         <li className='nav-item'>
                             <Link to='/user' className='nav-links fontvav' onClick={closeMobileMenu} >USER</Link>
-
                         </li>
                         <li className='nav-item'>
                             <Link className='nav-links fontvav' onClick={() => {
@@ -34,15 +30,11 @@ function Navbar() {
                                     method: 'POST',
                                     url: '/logout',
                                     success: (res) => {
-                                        console.log('see you another time')
                                         window.location.href = "/"
                                     },
                                     error: (err) => {
                                         console.log(err)
-
                                     }
-
-
                                 })
                             }}>SIGN OUT</Link>
                         </li>

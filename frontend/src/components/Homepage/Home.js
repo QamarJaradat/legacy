@@ -38,6 +38,7 @@ class Home extends React.Component {
             [e.target.name]: e.target.value,
         })
     };
+
     componentDidMount() {
         document.documentElement.scrollTop = 0;
         //get the top 5 Restaurant from the DB
@@ -61,8 +62,10 @@ class Home extends React.Component {
                     this.state.search.map((item, i) =>
                         <div style={{ 'text-align': 'center' }} key={i} > <div style={{ margin: '10px 0 10px 0' }}><Link to={{
                             pathname: `/restaurant`,
-                            state: { whichcat: item.Name }
-
+                            state: {
+                                therest: item,
+                                userid: this.props.userid
+                            }
                         }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstylesearch"
                             whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p></div>
                         </div>
@@ -74,7 +77,6 @@ class Home extends React.Component {
         else {
             ele = <h5>No Reault to Show ...</h5>
         }
-
         return (
             <div className='homediv'>
                 <Section searching={this.searching} updateSearch={this.updateSearch} />
@@ -82,8 +84,7 @@ class Home extends React.Component {
                     style={{ "marginBottom": '50px', marginTop: "18px" }}>
                     {ele}
                 </div>
-
-                <di>
+                <div >
                     <h3>Top Rated Restaurans</h3>
                     <div className="d-flex flex-wrap justify-content-around catdiv"
                         style={{ "marginBottom": '50px', marginTop: "18px" }}>
@@ -92,7 +93,10 @@ class Home extends React.Component {
                                 <div style={{ 'text-align': 'center' }} key={i} > <div style={{ margin: '10px 0 10px 0' }}>
                                     <Link to={{
                                         pathname: `/restaurant`,
-                                        state: { whichcat: item.Name }
+                                        state: {
+                                            therest: item,
+                                            userid: this.props.userid
+                                        }
                                     }}>
                                         <img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstylesearch"
                                             whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p></div>
@@ -100,7 +104,7 @@ class Home extends React.Component {
                             )
                         }
                     </div>
-                </di>
+                </div>
             </div>
         )
     }

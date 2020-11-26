@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
 
-
-
 .mainContainer{
     padding: 130px;
     display:flex;
@@ -18,19 +16,28 @@ border-radius: 10px;
 box-shadow:0px 1px 10px 1px black;
 overflow: hidden;
 }
+.Card2{
+    width:450px;
+    height:650px;
+    background: white;
+    border-radius: 10px;
+    box-shadow:0px 1px 10px 1px black;
+    overflow: hidden;
+    }
 .UpperContainer{
 height:100px;
-background:linear-gradient(to left, #ff8149, #ff494e)
+background:linear-gradient(to left, #ff8149, #ff494e);
 }
 
 .UpperContainer h3{
     color:white;
-    font-weight:900;
-    font-size:3rem;
+    /* font-weight:400; */
+    margin-top: 6px;
+    font-size:2rem;
 }
 
 .LowerContainer {
-    margin-top:25px;
+    margin-top:15px;
     height:300px;
     background:white;
     font-family: 'Titillium Web', sans-serif;
@@ -44,10 +51,10 @@ background:linear-gradient(to left, #ff8149, #ff494e)
 }
 .LowerContainer h4{
     color:#ff494e;
-    font-weight:700;
-    font-size:2.1rem;
+    /* font-weight:700; */
+    font-size:2rem;
 }
-.B{
+.B, .feedB{
     margin:1rem;
     margin-top: 0;
     color:#ff494e;
@@ -59,8 +66,13 @@ background:linear-gradient(to left, #ff8149, #ff494e)
     transition-duration: 0.5s;
     animation: ease-in-out;
     width:400px;
+    outline: none;
 }
-.B:hover{
+.feedB{
+    width:100px;
+
+}
+.B:hover, .feedB:hover{
     background-image:linear-gradient(to left, #ff8149, #ff494e);
     transform: scale(1.1);
     border:none;

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import './A-Style.css';
-
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Modal } from './SignInModal';
@@ -41,7 +40,7 @@ function Navbar(props) {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/Category' className='nav-links fontvav' onClick={closeMobileMenu}>RESTURANTS</Link>
+                            <Link to='/Category' className='nav-links fontvav' onClick={closeMobileMenu}>CATEGORIES</Link>
                         </li>
                         <li className='nav-item'>
                             <Link className='nav-links fontvav' onClick={openModal}>SIGN IN</Link>
