@@ -98,10 +98,10 @@ class Profile extends React.Component {
     if (this.state.myfeedback) {
       feeds = <div className="d-flex flex-column restsdiv"  >
         {
-          this.state.myfeedback.map((item, i) =>
-            <div style={{ 'text-align': 'left', borderColor: 'black', borderWidth: '2px' }} key={i} > <h6 className="gone"> 
-            🍽️ {item.restname +"   "}
-            &#11088; {item.rate + "   "} 
+          this.state.myfeedback.slice(0, 13).map((item, i) =>
+            <div style={{ 'text-align': 'left', borderColor: 'black', borderWidth: '2px' }} key={i} > <h6 className="gone">
+              🍽️ {item.restname + "   "}
+            &#11088; {item.rate + "   "}
             📝 {item.text} </h6>
             </div>)}
       </div>
