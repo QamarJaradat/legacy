@@ -35,8 +35,8 @@ exports.addFeedBack = (req, res) => {
                                 rate: req.body.rate
                             }
                             data.resturantFeedback.push(feedback)
-                            var rate = average(data.resturantFeedback)
-                            ResturantModel.update({ _id: resturantid }, { resturantFeedback: data.resturantFeedback }, (err, data) => {
+                            var rate = updaterate(data.resturantFeedback)
+                            ResturantModel.update({ _id: resturantid }, { resturantFeedback: data.resturantFeedback, restaurantRate: rate }, (err, data) => {
                                 if (err)
                                     return res.status(400).send('error')
                                 if (data)
@@ -65,4 +65,15 @@ exports.getbycat = (req, res) => {
 
 function average(nums) {
     return nums.reduce((a, b) => (a + b)) / nums.length;
+}
+
+function updaterate(array) {
+    // console.log(array)
+    var sum = 0
+    for (var i = 0; i < array.length; i++) {
+        console.log(array[i].rate)
+        if ((array[i].rate))
+            sum += parseInt(array[i].rate)
+    }
+    return (sum / array.length).toFixed(2)
 }

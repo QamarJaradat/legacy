@@ -105,8 +105,8 @@ class CardResturant extends React.Component {
         if (this.state.count === 1) {
             this.removefav()
         }
-
-        if (this.state.count !== 1)
+        console.log(this.state.user)
+        if (this.state.count !== 1 && this.state.user)
             $.ajax({
                 method: 'POST',
                 url: "/addfav",
@@ -138,6 +138,28 @@ class CardResturant extends React.Component {
     }
 
     render() {
+        console.log(this.state.rest.resturantFeedback)
+        var feedb = this.state.rest.resturantFeedback
+        let feeds
+        if (feedb) {
+            feeds = <div className="d-flex flex-column restsdiv"  >
+                {
+                    feedb.map((item, i) =>
+                        <div style={{ 'text-align': 'left', borderColor: 'black', marginLeft: '30px', borderWidth: '2px' }} key={i} > <h6 className="gone">
+                            🧍 {item.username + "   "}
+                             &#11088; {item.rate + "   "}
+                             📝 {item.text} </h6>
+                        </div>)}
+            </div>
+
+        }
+        if (feedb.length === 0) {
+            feeds = <div className="gone">No Feedbacks Added Yet</div>
+        }
+        var addfeed = ''
+        if (this.state.user) {
+            addfeed = '/feedback'
+        }
         return (
             <div className='oneresdiv'>
                 <div className="mainContainer">
@@ -159,7 +181,7 @@ class CardResturant extends React.Component {
 
                             <br></br>
                             <Link to={{
-                                pathname: '/feedback',
+                                pathname: addfeed,
                                 state: {
                                     userid: this.props.location.state.userid,
                                     therest: this.props.location.state.therest
@@ -167,7 +189,9 @@ class CardResturant extends React.Component {
                             }}>
                                 <button className="B"   >Add your FeedBack</button>
                             </Link>
+                            {feeds}
                         </div>
+
                     </div>
                 </div>
             </div>

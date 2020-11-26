@@ -37,7 +37,7 @@ class Restaurants extends React.Component {
 
 
     render() {
-        var cat = this.props.location.state.userid
+        var cat = this.props.location.state.whichcat
 
         console.log(cat)
 
