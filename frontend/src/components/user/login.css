@@ -5,6 +5,13 @@
     object-position: 50% 50%;
 
 }
+.starbutton{
+    display: none;
+}
+.star{
+    cursor: pointer;
+    transition: 200ms;
+}
 
 html, body {
     margin:0px;
@@ -16,12 +23,17 @@ html, body {
     height:142vh;
 }
  
-.inputhover:hover{
+/* .inputhover:checked{
 
-    background-color:rgba(82, 10, 41, 0.377);
+   border-color: blueviolet;
+   border-width: 4px;
     transition: 0.3s;
-}
+} */
 
+.inputhover{
+    width: 650px;
+    margin: auto;
+}
 #LoginupSwitch:hover {
     color : rgb(20, 20, 133) !important;
     cursor: pointer;

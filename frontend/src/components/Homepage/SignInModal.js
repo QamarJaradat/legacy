@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import $ from 'jquery'
 
-//pop up Styling 
+//pop up Styling///////////////////////////// 
 const Background = styled.div`
   width: 1000%;
   height: 100%;
@@ -26,7 +26,6 @@ const ModalWrapper = styled.div`
   z-index: 10;
   border-radius: 10px;
 `;
-
 
 const ModalContent = styled.div`
   display: flex;
@@ -61,8 +60,9 @@ const CloseModalButton = styled(MdClose)`
   padding: 0;
   z-index: 10;
 `;
-
+////////////////////////////////////
 export const Modal = ({ showModal, setShowModal }) => {
+  //pop up functionality 
   const modalRef = useRef();
   var passInput = React.createRef();
   var emailInput = React.createRef();
@@ -73,13 +73,11 @@ export const Modal = ({ showModal, setShowModal }) => {
     opacity: showModal ? 1 : 0,
     transform: showModal ? `translateY(0%)` : `translateY(-100%)`
   });
-
   const closeModal = e => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }
   };
-
   const keyPress = useCallback(
     e => {
       if (e.key === 'Escape' && showModal) {
@@ -89,7 +87,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     },
     [setShowModal, showModal]
   );
-
   useEffect(
     () => {
       document.addEventListener('keydown', keyPress);
@@ -97,7 +94,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     },
     [keyPress]
   );
-
   return (
     <>
       {showModal ? (
@@ -116,11 +112,8 @@ export const Modal = ({ showModal, setShowModal }) => {
                     <input type="password" ref={passInput} className="form-control" placeholder="Enter password" />
                   </div>
                   <small id="logPass"></small>
-
-
                   <div className="form-group">
                   </div>
-
                   <button type="button" className="btn btn-primary btn-block" onClick={() => {
                     var password = passInput.current.value
                     var email = emailInput.current.value
@@ -139,10 +132,9 @@ export const Modal = ({ showModal, setShowModal }) => {
                         if (error.status === 410) {
                           //alert('Empty data')
                           document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your email</div>"
-
                         }
                         if (error.status === 404) {
-                          document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> Invaild Username</div>"
+                          document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> Invaild Email</div>"
                           //alert('user not existed')
                           console.log(error.responseText)
                         }

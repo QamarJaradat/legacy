@@ -325,10 +325,9 @@ video {
     
       /* padding: 60px; */
       text-align: center;
-      background: #1abc9c;
       color: white;
       font-size: 30px;
-      background-image: url('https://post.healthline.com/wp-content/uploads/2020/09/health-benefits-of-eggs-732x549-thumbnail.jpg');
+      background-image: url('https://i.imgur.com/osav7ai.jpg');
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -434,7 +433,7 @@ video {
       text-decoration: none !important;
     }
     .navbar-logo :hover {
-      color: rgb(236, 219, 219);
+      color: #ffdfae;
       text-decoration: none !important;
     }
     
@@ -468,7 +467,7 @@ video {
     }
     
     .nav-links:hover {
-      border-bottom: 4px solid #FDEDF4;
+      border-bottom: 4px solid #ffdfae;
       transition: all 0.2s ease-out;
       text-decoration: none ;
       color: #FDEDF4;
@@ -605,3 +604,45 @@ footer {
   font-family: 'Athiti', sans-serif;
   font-weight: bolder;
   font-size: large;}
+
+  .homediv{
+    min-height: 100vh
+  }
+
+  .secimg{
+    background-color: rgba(0, 0, 0, 0.356);
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+  .restqo{
+    font-family: 'Homemade Apple', cursive;
+  }
+  .imgstylesearch{
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 14vw;
+    height: 14vw;
+    border-radius: 30px ;
+    margin-bottom: 18px;
+  }
+
+  .Bsearch{
+    margin:1rem;
+    margin-top: 0;
+    color:rgb(0, 0, 0);
+    font:bold;
+    width: 13%;
+    background-image:linear-gradient(to right, #f5a52e, #ff5d62);
+    /* border: 2px solid black; */
+    /* border-color: none; */
+    padding:0.6rem;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+    animation: ease-in-out;
+}
+.Bsearch:hover{
+    background-image:linear-gradient(to left, #f5a52e, #ff5d62);
+    transform: scale(1.1);
+    /* border:none; */
+    color:white;
+}

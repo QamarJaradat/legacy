@@ -3,7 +3,9 @@ const bcrypt = require('bcryptjs')
 //JWT
 const jwt = require('jsonwebtoken');
 exports.signUpUser = async (req, res) => {
+    console.log(req.body)
     const salt = await bcrypt.genSalt(10)
+    
     const hashedPass = await bcrypt.hash(req.body.userPass, salt)
     // User Data when Signing up
     // console.log(req.body)
@@ -83,7 +85,7 @@ exports.checkuser = (req, res) => { return (req.user) }
 
 exports.getuserinfo = (req, res) => {
     UserModel.findOne({ _id: req.body.id }, (err, userData) => {
-        console.log(req.body._id)
+        // console.log(req.body._id)
         if (err) {
             console.log(err)
             return res.status(500).send('error')
