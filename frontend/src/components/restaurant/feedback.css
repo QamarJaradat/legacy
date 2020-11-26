@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
 
-
-
 .mainContainer{
     padding: 130px;
     display:flex;
@@ -28,7 +26,7 @@ overflow: hidden;
     }
 .UpperContainer{
 height:100px;
-background:linear-gradient(to left, #ff8149, #ff494e)
+background:linear-gradient(to left, #ff8149, #ff494e);
 }
 
 .UpperContainer h3{
@@ -68,6 +66,7 @@ background:linear-gradient(to left, #ff8149, #ff494e)
     transition-duration: 0.5s;
     animation: ease-in-out;
     width:400px;
+    outline: none;
 }
 .feedB{
     width:100px;

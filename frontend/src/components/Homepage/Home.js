@@ -38,6 +38,7 @@ class Home extends React.Component {
     };
     componentDidMount() {
         document.documentElement.scrollTop = 0;
+
         //get the top 5 Restaurant from the DB
         $.ajax({
             type: "GET",
@@ -59,7 +60,10 @@ class Home extends React.Component {
                     this.state.search.map((item, i) =>
                         <div style={{ 'text-align': 'center' }} key={i} > <div style={{ margin: '10px 0 10px 0' }}><Link to={{
                             pathname: `/restaurant`,
-                            state: { whichcat: item.Name }
+                            state: {
+                                whichcat: item.Name,
+
+                            }
                         }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstylesearch"
                             whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p></div>
                         </div>
@@ -71,6 +75,7 @@ class Home extends React.Component {
         else {
             ele = <h5>No Reault to Show ...</h5>
         }
+
         return (
             <div className='homediv'>
                 <Section searching={this.searching} updateSearch={this.updateSearch} />
@@ -89,7 +94,9 @@ class Home extends React.Component {
                                 <div style={{ 'text-align': 'center' }} key={i} > <div style={{ margin: '10px 0 10px 0' }}>
                                     <Link to={{
                                         pathname: `/restaurant`,
-                                        state: { whichcat: item.Name }
+                                        state: {
+                                            whichcat: item.Name,
+                                        }
                                     }}>
                                         <img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstylesearch"
                                             whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p></div>

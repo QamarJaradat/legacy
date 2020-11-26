@@ -78,7 +78,7 @@ class App extends React.Component {
               path="/"
               exact render={(props) => <Home userid={this.state.userid} />} />
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />} />
-            <Route path="/Category" exact component={Categories} />
+            <Route path="/Category" exact render={(props) => <Categories userid={this.state.userid} />} />
             <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
             <Route path="/Category/:category/:rest" exact component={CardResturant} />

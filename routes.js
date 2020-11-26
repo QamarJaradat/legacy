@@ -21,7 +21,7 @@ const restController = require('./Controller/restaurantController')
 routers.post('/filldata', restController.fillrest)
 routers.post('/rest', restController.allrest);
 routers.post('/search', restController.searchrest);
-routers.post('/get', restController.getrest);
+routers.post('/getonerest', restController.getrest);
 
 
 const feedback = require('./Controller/feedBackController')
@@ -40,5 +40,15 @@ routers.get('/gettop5', (req, res) => {
         res.end(JSON.stringify(response))
     }).catch((error) => { console.log(error) })
 })
+
+
+//feedback Controller
+const FeedBackController = require('./Controller/feedBackController')
+routers.post('/feedback', FeedBackController.addFeedBack)
+
+//fav Controller 
+const FavController = require('./Controller/favController')
+routers.post('/addfav', FavController.addFav)
+
 
 module.exports = routers;
