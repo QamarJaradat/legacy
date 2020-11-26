@@ -11,7 +11,8 @@ class CardResturant extends React.Component {
             rest: this.props.location.state.therest,
             count: 0,
             color: 'withe',
-            txtcolor: 'black'
+            txtcolor: 'black',
+            fav: 'Add to Faviorate'
         }
         this.addfav = this.addfav.bind(this)
         this.removefav = this.removefav.bind(this)
@@ -36,14 +37,17 @@ class CardResturant extends React.Component {
                     this.setState({
                         count: 1,
                         color: 'red',
-                        txtcolor: "white"
+                        txtcolor: "white",
+                        fav: 'Remove from Faviorate'
                     })
                 }
                 else {
                     this.setState({
                         count: 0,
                         color: 'white',
-                        txtcolor: "black"
+                        txtcolor: "black",
+                        fav: 'Add to Faviorate'
+
                     })
                 }
             },
@@ -83,6 +87,7 @@ class CardResturant extends React.Component {
                     count: 0,
                     color: 'white',
                     txtcolor: "black",
+                    fav: 'Add to Faviorate'
                 })
             },
             error: (err) => {
@@ -117,7 +122,8 @@ class CardResturant extends React.Component {
                                 rest: res,
                                 count: 1,
                                 color: 'red',
-                                txtcolor: "white"
+                                txtcolor: "white",
+                                fav: 'Remove from Faviorate'
                             })
                         },
                         error: (err) => {
@@ -149,7 +155,7 @@ class CardResturant extends React.Component {
                                 <p>Rate {this.state.rest.restaurantRate} </p>
                                 <p> Likes {this.state.rest.Likes.length}   </p>
                             </span>
-                            <button className="B" onClick={this.addfav} style={{ backgroundColor: this.state.color, color: this.state.txtcolor }} >Add to Faviorate</button>
+                            <button className="B" onClick={this.addfav} style={{ backgroundColor: this.state.color, color: this.state.txtcolor }} >{this.state.fav}</button>
 
                             <br></br>
                             <Link to={{
