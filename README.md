@@ -55,6 +55,6 @@ npm start
 
 ### Picture Documentation
 
-![Home Page]([img]https://i.imgur.com/Eqbuf6b.png[/img])
+![Home Page](https://imgur.com/Eqbuf6b)
 
 
