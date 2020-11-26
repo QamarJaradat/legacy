@@ -86,3 +86,14 @@ margin-left:25%;
     border:none;
     color:white;
 }
+
+
+
+#heart{
+    font-size:25px ;
+    color:red;
+}
+#st{
+    font-size:25px ;
+    color:#FFC107; 
+}

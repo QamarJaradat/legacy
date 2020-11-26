@@ -146,8 +146,8 @@ class CardResturant extends React.Component {
                             <h4>{this.state.rest.Phone}</h4>
                             <p>{this.state.rest.Address}</p>
                             <span>
-                                <p>Rate {this.state.rest.restaurantRate} </p>
-                                <p> Likes {this.state.rest.Likes.length}   </p>
+                                <p><i class="fas fa-star" id="st"></i> {this.state.rest.restaurantRate} </p>
+                                <p> <i class="fas fa-heart" id="heart"></i> <h7>{this.state.rest.Likes.length}</h7>   </p>
                             </span>
                             <button className="B" onClick={this.addfav} style={{ backgroundColor: this.state.color, color: this.state.txtcolor }} >Add to Faviorate</button>
 
