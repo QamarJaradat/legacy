@@ -92,21 +92,23 @@ class Profile extends React.Component {
 
     }
     if (this.state.myrest.length === 0) {
-      cards = <div>No Faviorated Restaurants Yet</div>
+      cards = <div className="gone">No Favorite Restaurants Added Yet</div>
     }
     let feeds
     if (this.state.myfeedback) {
       feeds = <div className="d-flex flex-column restsdiv"  >
         {
           this.state.myfeedback.map((item, i) =>
-            <div style={{ 'text-align': 'center', borderColor: 'black', borderWidth: '2px' }} key={i} > <span className=''> restaurant Name: {item.restname}
-            Rate:{item.rate} stars feedback: {item.text} </span>
+            <div style={{ 'text-align': 'left', borderColor: 'black', borderWidth: '2px' }} key={i} > <h6 className="gone"> 
+            🍽️ {item.restname +"   "}
+            &#11088; {item.rate + "   "} 
+            📝 {item.text} </h6>
             </div>)}
       </div>
 
     }
     if (this.state.myfeedback.length === 0) {
-      feeds = <div>No FeedBackes Yet</div>
+      feeds = <div className="gone">No Feedbacks Added Yet</div>
     }
 
 
@@ -119,8 +121,6 @@ class Profile extends React.Component {
               <div className='picContainer'>
                 <br></br>
                 <br></br>
-                <br></br>
-                <br></br>
                 <img className="img1"
                   src={this.state.profileimg}
                   alt="userPic"
@@ -130,17 +130,14 @@ class Profile extends React.Component {
             <div className="col-sm-4 col-md-4 col-lg-4">
               <br></br>
               <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
               <div>
                 <h4 className="text1">Name</h4>
-                <h6 className="text1">{this.props.userid.userName}</h6>
+                <h5 className="text">{this.props.userid.userName}</h5>
               </div>
               <br></br>
               <div>
                 <h4 className="text1">Email</h4>
-                <h6 className="text1">{this.props.userid.userMail}</h6>
+                <h5 className="text">{this.props.userid.userMail}</h5>
               </div>
             </div>
           </div>
