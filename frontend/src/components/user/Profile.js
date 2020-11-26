@@ -1,7 +1,8 @@
 import React from "react";
 import './Profile.css';
-import Carditem from './UserCarditem';
 import $ from 'jquery'
+import { Link } from 'react-router-dom'
+// import feedback from "../restaurant/feedback";
 // import { List, ListItem, ListItemContent } from 'react-mdl';
 // import ReactDOM from "react-dom";
 // import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams } from "react-router-dom";
@@ -13,124 +14,150 @@ class Profile extends React.Component {
     this.state = {
       usename: '',
       useremail: '',
-      mytrips: '',
+      myrest: [],
+      myfeedback: [],
       profileimg: 'https://i.imgur.com/ejGOOnV.jpg'
     }
-    this.booktrip = this.booktrip.bind(this)
-  }
-
-  booktrip() {
-    console.log('clicked')
   }
 
   componentDidMount() {
-    console.log(this.props.userid)
     if (this.props.userid.userimage) {
       this.setState({
         profileimg: this.props.userid.userimage
       })
     }
-    var array = []
-    if (this.props.userid.trips) {
-      // console.log(this.props.userid.trips)
-      var mytrips = this.props.userid.trips
-      for (var i in mytrips) {
-        $.ajax({
-          type: "POST",
-          url: "/getmytrips",
-          data: { id: mytrips[i] },
-          success: (res) => {
-            console.log(res)
-            array.push(res)
+    if (this.props.userid._id)
+      $.ajax({
+        method: 'POST',
+        url: '/getuserinfo',
+        data: { id: this.props.userid._id },
+        success: (resin) => {
+          console.log(resin.feedBack)
+          var feedarray = []
+          for (var i in resin.feedBack) {
+            feedarray.push(resin.feedBack[i])
             this.setState({
-              mytrips: array
+              myfeedback: feedarray
             })
-          },
-          error: (err) => {
-            console.log(err)
           }
-        })
-      }
-    }
+          var array = []
+          var myrest = resin.favoriteRes
+          for (var j in myrest) {
+            $.ajax({
+              type: "POST",
+              url: "/getonerest",
+              data: { id: myrest[j] },
+              success: (res) => {
+                // console.log(res)
+                array.push(res)
+                this.setState({
+                  myrest: array
+                })
+                // console.log(this.state.myrest)
+              },
+              error: (err) => {
+                console.log(err)
+              }
+            })
+          }
+        },
+        error: (err) => {
+          console.log(err)
+        }
+      })
+
+
+
   }
   componentWillMount() {
     document.documentElement.scrollTop = 0;
-    // $.get('/getuserinfo', { data: this.props.userid })
 
   }
   render() {
     let cards
-    if (this.state.mytrips) {
-      cards = <div> <ul className="cards__items">
-        {this.state.mytrips.slice(0, 3).map((trip) =>
-          <Carditem
-            src={trip.image[0][0]}
-            label={trip.name}
-            text={trip.explore}
-            path='/mytrip'
-            trip={trip}
-            paymentCheck={this.props.paymentCheck}
-          />)}</ul>
-        <ul className="cards__items">
-          {this.state.mytrips.slice(3, 5).map((trip) =>
-            <Carditem
-              src={trip.image[0][0]}
-              label={trip.name}
-              text={trip.explore}
-              path='/mytrip'
-              trip={trip}
-              paymentCheck={this.props.paymentCheck}
-            />)}</ul>
+    if (this.state.myrest) {
+      cards = <div className="d-flex flex-wrap justify-content-around restsdiv"  >
+        {
+          this.state.myrest.map((item, i) =>
+            <div style={{ 'text-align': 'center' }} key={i} > <Link to={{
+              pathname: `/user/${item.Name}`,
+              state: {
+                therest: item,
+                userid: this.props.userid
+              }
+            }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstyle"
+              whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p>
+            </div>)}
       </div>
 
     }
-    else {
-      cards = <div>No Booked Trips Yet</div>
+    if (this.state.myrest.length === 0) {
+      cards = <div className="gone">No Favorite Restaurants Added Yet</div>
     }
+    let feeds
+    if (this.state.myfeedback) {
+      feeds = <div className="d-flex flex-column restsdiv"  >
+        {
+          this.state.myfeedback.map((item, i) =>
+            <div style={{ 'text-align': 'left', borderColor: 'black', borderWidth: '2px' }} key={i} > <h6 className="gone"> 
+            🍽️ {item.restname +"   "}
+            &#11088; {item.rate + "   "} 
+            📝 {item.text} </h6>
+            </div>)}
+      </div>
+
+    }
+    if (this.state.myfeedback.length === 0) {
+      feeds = <div className="gone">No Feedbacks Added Yet</div>
+    }
+
+
+
     return (
-      <div className="imgdiv">
-        <div className="row" id="row">
-          <div id="profile" className="col-sm-4 right" >
-            <br></br>
-            <br></br>
-            <br></br>
-            <div className='picContainer'>
-              <img className="img1"
-                src={this.state.profileimg}
-                alt="userPic"
-              />
+      <div className="container">
+        <div className="box1">
+          <div className="row">
+            <div className="col-sm-4 col-md-4 col-lg-4 text-center">
+              <div className='picContainer'>
+                <br></br>
+                <br></br>
+                <img className="img1"
+                  src={this.state.profileimg}
+                  alt="userPic"
+                />
+              </div>
             </div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <div className='textContainer' >
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <br></br>
+              <br></br>
               <div>
-                <h4 className="text">Name</h4>
-                <h6 className="text1">{this.props.userid.userName}</h6>
+                <h4 className="text1">Name</h4>
+                <h5 className="text">{this.props.userid.userName}</h5>
               </div>
+              <br></br>
               <div>
-                <h4 className="text">Email</h4>
-                <h6 className="text1">{this.props.userid.userMail}</h6>
-              </div>
-              <div>
-                <h4 className="text">Phone Number</h4>
-                <h6 className="text1">{this.props.userid.userNum}</h6>
+                <h4 className="text1">Email</h4>
+                <h5 className="text">{this.props.userid.userMail}</h5>
               </div>
             </div>
           </div>
-          <div className="col left" id="column">
-            <div className='cards__container' id="cards__container1">
-              <div className="cards__wrapper">
-                <br></br>
-                <br></br>
-                <div className="textContainer">
-                  <h4 className="text">Booked Trips</h4>
-                </div>
-                <br></br>
-                {cards}
-              </div>
-            </div>
-          </div>
+
+        </div>
+        {/*Faviorate and top rated*/}
+        <div className="fav">
+          <h4 className="text">Your Faviorate Restaurants</h4>
+
+        </div>
+
+
+        <div className="box2">
+          {cards}
+        </div>
+        <div className="fav">
+          <h4 className="text">Your Restaurants FeedBack</h4>
+        </div>
+        <div className="box2">
+          {feeds}
         </div>
       </div>
     )

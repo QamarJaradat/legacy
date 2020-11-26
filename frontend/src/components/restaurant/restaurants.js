@@ -37,7 +37,7 @@ class Restaurants extends React.Component {
 
 
     render() {
-        var cat = this.props.location.state.whichcat
+        var cat = this.props.location.state.userid
 
         console.log(cat)
 
@@ -46,7 +46,10 @@ class Restaurants extends React.Component {
                 this.state.restaurants.map((item, i) =>
                     <div style={{ 'text-align': 'center' }} key={i} > <Link to={{
                         pathname: `/Category/${cat}/${item.Name}`,
-                        state: { whichcart: item.Name }
+                        state: {
+                            therest: item,
+                            userid: this.props.location.state.userid
+                        }
                     }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstyle"
                         whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p>
                     </div>)}

@@ -1,4 +1,4 @@
-# Project Name : 
+# Project Name : FoodDose
 
 ## Team
   - Deema AbuZahra
@@ -17,6 +17,7 @@
 
 ## About
 
+Food Dose is a website where you can find your favorite restaurant information (Name + Phone Number) in Hebron city - Palestine. You can add the restaurant to your page for easy access, and rate it as well. 
 
 ## Requirements
 
@@ -27,35 +28,33 @@
 
 1. Fork the repo from github.
 2. Clone down your fork
-/////////
+```
+  git clone https://github.com/<Your Github userName>/legacy
+```
 3. Move into the repo after its been cloned onto your machine.
 4. Follow the instructions in the 'Installing Dependencies' section.
 
 ### Installing Dependencies
 
-1. Open terminal 1: From root directory to forntend directory:
-```
-cd frontend/
-```
+1. Open terminal 1: From within the root directory:
 ```
 npm install
-```
-```
-npm run build
-```
-2. Open terminal 2: From within the root directory:
-```
-npm install
-```
-```
-npm install -g nodemon
-```
-```
+
 npm start 
 ```
-open your localhost:4000
+2. Open terminal 2: From root directory to forntend directory:
+```
+cd frontend/
+
+npm install
+
+npm start 
+```
+3. wait until your localhost is open at 3000
+4. Note: backend is connected with frontend using proxy.
 
 ### Picture Documentation
 
+![Home Page](https://i.imgur.com/Eqbuf6b.png)
 
 
