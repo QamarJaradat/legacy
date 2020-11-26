@@ -7,9 +7,9 @@ import $ from 'jquery'
 
 function feedback(props) {
     var feedbackInput = React.createRef();
-    var starRate
+    var starRate = 0
     const getstarvalue = (value) => {
-        starRate = value
+        starRate = value 
     }
 
     return (
